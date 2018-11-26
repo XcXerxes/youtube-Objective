@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CF0422B68B60BA2973888EA /* libPods-youtube-Objective.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */; };
 		CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1321ABE2810048D523 /* AppDelegate.m */; };
 		CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1621ABE2810048D523 /* ViewController.m */; };
 		CF2D9B1A21ABE2810048D523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2D9B1821ABE2810048D523 /* Main.storyboard */; };
 		CF2D9B1C21ABE2880048D523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2D9B1B21ABE2880048D523 /* Assets.xcassets */; };
 		CF2D9B1F21ABE2880048D523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2D9B1D21ABE2880048D523 /* LaunchScreen.storyboard */; };
 		CF2D9B2221ABE2880048D523 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B2121ABE2880048D523 /* main.m */; };
+		CF2D9B2C21ABE66E0048D523 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B2B21ABE66E0048D523 /* SlideViewController.m */; };
+		CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-youtube-Objective.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.release.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.release.xcconfig"; sourceTree = "<group>"; };
+		BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2D9B0F21ABE2810048D523 /* youtube-Objective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "youtube-Objective.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2D9B1221ABE2810048D523 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF2D9B1321ABE2810048D523 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +32,11 @@
 		CF2D9B1E21ABE2880048D523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF2D9B2021ABE2880048D523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2D9B2121ABE2880048D523 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF2D9B2A21ABE66E0048D523 /* SlideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
+		CF2D9B2B21ABE66E0048D523 /* SlideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
+		CF2D9B2D21ABE9D80048D523 /* SlideTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideTabBar.h; sourceTree = "<group>"; };
+		CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideTabBar.m; sourceTree = "<group>"; };
+		CF2D9B3121ABF43E0048D523 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF0422B68B60BA2973888EA /* libPods-youtube-Objective.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +56,8 @@
 			children = (
 				CF2D9B1121ABE2810048D523 /* youtube-Objective */,
 				CF2D9B1021ABE2810048D523 /* Products */,
+				F346818FAF0BBFC175CC9BED /* Pods */,
+				D3284D2371D48BEBDE510809 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +72,8 @@
 		CF2D9B1121ABE2810048D523 /* youtube-Objective */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D9B3021ABF42D0048D523 /* utils */,
+				CF2D9B2821ABE2C40048D523 /* modules */,
 				CF2D9B1221ABE2810048D523 /* AppDelegate.h */,
 				CF2D9B1321ABE2810048D523 /* AppDelegate.m */,
 				CF2D9B1521ABE2810048D523 /* ViewController.h */,
@@ -71,6 +87,50 @@
 			path = "youtube-Objective";
 			sourceTree = "<group>";
 		};
+		CF2D9B2821ABE2C40048D523 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D9B2921ABE3720048D523 /* other */,
+			);
+			name = modules;
+			sourceTree = "<group>";
+		};
+		CF2D9B2921ABE3720048D523 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D9B2A21ABE66E0048D523 /* SlideViewController.h */,
+				CF2D9B2B21ABE66E0048D523 /* SlideViewController.m */,
+				CF2D9B2D21ABE9D80048D523 /* SlideTabBar.h */,
+				CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		CF2D9B3021ABF42D0048D523 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D9B3121ABF43E0048D523 /* Constants.h */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		D3284D2371D48BEBDE510809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F346818FAF0BBFC175CC9BED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */,
+				4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +138,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF2D9B2521ABE2880048D523 /* Build configuration list for PBXNativeTarget "youtube-Objective" */;
 			buildPhases = (
+				50CE2CC063046CDEAC3B1728 /* [CP] Check Pods Manifest.lock */,
 				CF2D9B0B21ABE2810048D523 /* Sources */,
 				CF2D9B0C21ABE2810048D523 /* Frameworks */,
 				CF2D9B0D21ABE2810048D523 /* Resources */,
@@ -136,11 +197,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50CE2CC063046CDEAC3B1728 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-youtube-Objective-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF2D9B0B21ABE2810048D523 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2D9B2C21ABE66E0048D523 /* SlideViewController.m in Sources */,
+				CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */,
 				CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */,
 				CF2D9B2221ABE2880048D523 /* main.m in Sources */,
 				CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */,
@@ -283,6 +371,7 @@
 		};
 		CF2D9B2621ABE2880048D523 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +388,7 @@
 		};
 		CF2D9B2721ABE2880048D523 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
