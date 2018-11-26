@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SlideTabBar.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SlideViewController : UIViewController
 @property (nonatomic, strong) UICollectionView  *collectionView;
+@property (nonatomic, strong) SlideTabBar *slideTabBar;
 @end
 
 NS_ASSUME_NONNULL_END

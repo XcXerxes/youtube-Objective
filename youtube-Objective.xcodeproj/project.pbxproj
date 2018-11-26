@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522AE21AC2C100077B579 /* NavHeaderView.m */; };
 		8CF0422B68B60BA2973888EA /* libPods-youtube-Objective.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */; };
 		CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1321ABE2810048D523 /* AppDelegate.m */; };
 		CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1621ABE2810048D523 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D3522AD21AC2C0F0077B579 /* NavHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavHeaderView.h; sourceTree = "<group>"; };
+		0D3522AE21AC2C100077B579 /* NavHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavHeaderView.m; sourceTree = "<group>"; };
 		3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-youtube-Objective.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.release.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.release.xcconfig"; sourceTree = "<group>"; };
 		BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				CF2D9B2B21ABE66E0048D523 /* SlideViewController.m */,
 				CF2D9B2D21ABE9D80048D523 /* SlideTabBar.h */,
 				CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */,
+				0D3522AD21AC2C0F0077B579 /* NavHeaderView.h */,
+				0D3522AE21AC2C100077B579 /* NavHeaderView.m */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF2D9B2C21ABE66E0048D523 /* SlideViewController.m in Sources */,
+				0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */,
 				CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */,
 				CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */,
 				CF2D9B2221ABE2880048D523 /* main.m in Sources */,

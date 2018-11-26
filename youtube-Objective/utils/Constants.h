@@ -15,3 +15,5 @@
 // color
 
 #define ColorWhite [UIColor whiteColor]
+
+#define ColorThemeRed [UIColor colorWithRed:202/255.0 green:52/255.0 blue:30/255.0 alpha:1]
