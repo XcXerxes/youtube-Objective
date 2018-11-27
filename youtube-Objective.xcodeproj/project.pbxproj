@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522AE21AC2C100077B579 /* NavHeaderView.m */; };
+		0D3522B221AD703D0077B579 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522B121AD703D0077B579 /* TabBarController.m */; };
+		0D3522B521AD78510077B579 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522B421AD78510077B579 /* NavigationController.m */; };
+		0D3522BB21AD79A10077B579 /* TrendingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522BA21AD79A10077B579 /* TrendingViewController.m */; };
+		0D3522BE21AD79DC0077B579 /* SubscriptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522BD21AD79DC0077B579 /* SubscriptionsViewController.m */; };
+		0D3522C121AD79E60077B579 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522C021AD79E60077B579 /* AccountViewController.m */; };
+		0D3522C421AD7B440077B579 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522C321AD7B440077B579 /* BaseViewController.m */; };
 		8CF0422B68B60BA2973888EA /* libPods-youtube-Objective.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */; };
 		CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1321ABE2810048D523 /* AppDelegate.m */; };
 		CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1621ABE2810048D523 /* ViewController.m */; };
@@ -26,6 +32,18 @@
 /* Begin PBXFileReference section */
 		0D3522AD21AC2C0F0077B579 /* NavHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavHeaderView.h; sourceTree = "<group>"; };
 		0D3522AE21AC2C100077B579 /* NavHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavHeaderView.m; sourceTree = "<group>"; };
+		0D3522B021AD703D0077B579 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		0D3522B121AD703D0077B579 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		0D3522B321AD78510077B579 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		0D3522B421AD78510077B579 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		0D3522B921AD79A10077B579 /* TrendingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendingViewController.h; sourceTree = "<group>"; };
+		0D3522BA21AD79A10077B579 /* TrendingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendingViewController.m; sourceTree = "<group>"; };
+		0D3522BC21AD79DC0077B579 /* SubscriptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscriptionsViewController.h; sourceTree = "<group>"; };
+		0D3522BD21AD79DC0077B579 /* SubscriptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubscriptionsViewController.m; sourceTree = "<group>"; };
+		0D3522BF21AD79E60077B579 /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		0D3522C021AD79E60077B579 /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		0D3522C221AD7B440077B579 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0D3522C321AD7B440077B579 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-youtube-Objective.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.release.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.release.xcconfig"; sourceTree = "<group>"; };
 		BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +84,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3522B621AD79140077B579 /* Trending - 热门 */ = {
+			isa = PBXGroup;
+			children = (
+				0D3522B921AD79A10077B579 /* TrendingViewController.h */,
+				0D3522BA21AD79A10077B579 /* TrendingViewController.m */,
+			);
+			name = "Trending - 热门";
+			sourceTree = "<group>";
+		};
+		0D3522B721AD79410077B579 /* Subscriptions - 订阅 */ = {
+			isa = PBXGroup;
+			children = (
+				0D3522BC21AD79DC0077B579 /* SubscriptionsViewController.h */,
+				0D3522BD21AD79DC0077B579 /* SubscriptionsViewController.m */,
+			);
+			path = "Subscriptions - 订阅";
+			sourceTree = "<group>";
+		};
+		0D3522B821AD79860077B579 /* Account - 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				0D3522BF21AD79E60077B579 /* AccountViewController.h */,
+				0D3522C021AD79E60077B579 /* AccountViewController.m */,
+			);
+			name = "Account - 个人中心";
+			sourceTree = "<group>";
+		};
 		CF2D9B0621ABE2800048D523 = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +150,17 @@
 		CF2D9B2821ABE2C40048D523 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				0D3522B821AD79860077B579 /* Account - 个人中心 */,
+				0D3522B721AD79410077B579 /* Subscriptions - 订阅 */,
+				0D3522B621AD79140077B579 /* Trending - 热门 */,
 				CF2D9B3221AD19B00048D523 /* Main - 主页 */,
 				CF2D9B2921ABE3720048D523 /* other */,
+				0D3522B021AD703D0077B579 /* TabBarController.h */,
+				0D3522B121AD703D0077B579 /* TabBarController.m */,
+				0D3522B321AD78510077B579 /* NavigationController.h */,
+				0D3522B421AD78510077B579 /* NavigationController.m */,
+				0D3522C221AD7B440077B579 /* BaseViewController.h */,
+				0D3522C321AD7B440077B579 /* BaseViewController.m */,
 			);
 			name = modules;
 			sourceTree = "<group>";
@@ -264,10 +318,16 @@
 				0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */,
 				CF2D9B4721AD42060048D523 /* BasePageViewController.m in Sources */,
 				CF2D9B4421AD40CA0048D523 /* HomeViewController.m in Sources */,
+				0D3522C121AD79E60077B579 /* AccountViewController.m in Sources */,
 				CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */,
+				0D3522BE21AD79DC0077B579 /* SubscriptionsViewController.m in Sources */,
+				0D3522B221AD703D0077B579 /* TabBarController.m in Sources */,
 				CF2D9B3B21AD38EF0048D523 /* MainViewController.m in Sources */,
+				0D3522C421AD7B440077B579 /* BaseViewController.m in Sources */,
+				0D3522BB21AD79A10077B579 /* TrendingViewController.m in Sources */,
 				CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */,
 				CF2D9B2221ABE2880048D523 /* main.m in Sources */,
+				0D3522B521AD78510077B579 /* NavigationController.m in Sources */,
 				CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */,
 				CF2D9B3521AD20A50048D523 /* HoverViewFlowLayout.m in Sources */,
 			);

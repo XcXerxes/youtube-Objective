@@ -24,14 +24,13 @@ SlideTabBarDelegate
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
-    [self initNav];
+    // [self initNav];
     // 初始化slide
-    [self initSlideTabBar];
+    // [self initSlideTabBar];
     BasePageViewController *pageView = [BasePageViewController new];
     NSArray *data = [NSArray arrayWithObjects:@"11",@"222", @"333",@"4444",nil];
     pageView.pageContent = [NSMutableArray arrayWithArray:data];
-    pageView.view.bounds = CGRectMake(0, 150, 200, 200);
-    // [self presentViewController:pageView animated:YES completion:nil];
+    [self presentViewController:pageView animated:YES completion:nil];
 }
 
 /*

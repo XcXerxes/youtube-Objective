@@ -14,17 +14,48 @@
 @interface BasePageViewController ()
 <
 UIPageViewControllerDelegate,
-UIPageViewControllerDataSource
+UIPageViewControllerDataSource,
+SlideTabBarDelegate
 >
+@property (nonatomic, strong) SlideTabBar *slideTabBar;
 @property (nonatomic, strong) UIPageViewController *pageViewController;
+@property (nonatomic, strong) UIBarButtonItem *leftLabelBtn;
 @end
 
 @implementation BasePageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initNav];
+    [self initSlideTabBar];
     // Do any additional setup after loading the view.
     [self setupMainView];
+}
+
+// initNav
+-(void) initNav {
+    self.navigationController.navigationBar.translucent = NO;
+    // 设置导航控制器的背景颜色
+    self.navigationController.navigationBar.barTintColor = ColorThemeRed;
+    //
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [self setStatusBarBackgroundColor: ColorThemeRed];
+    // 去掉导航控制器的下边框
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+    //左边标题按钮
+    _leftLabelBtn = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStyleDone target:self action:nil];
+    [_leftLabelBtn setTintColor:ColorWhite];
+    _leftLabelBtn.enabled = NO;
+    [_leftLabelBtn setTitleTextAttributes:@{NSForegroundColorAttributeName: ColorWhite} forState:UIControlStateDisabled];
+    self.navigationItem.leftBarButtonItem = _leftLabelBtn;
+}
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
 }
 
 
@@ -43,7 +74,7 @@ UIPageViewControllerDataSource
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [_pageViewController didMoveToParentViewController:self];
-    _pageViewController.view.bounds = CGRectMake(0, 150, 200, 200);
+    _pageViewController.view.bounds = CGRectMake(0, 55, ScreenWidth, 200);
 
 }
 //返回一个视图
@@ -76,6 +107,19 @@ UIPageViewControllerDataSource
     // dataViewController.LQQ_dataObject = [self.pageContent objectAtIndex:index];
     
     return dataViewController;
+}
+
+-(void) initSlideTabBar {
+    _slideTabBar = [SlideTabBar new];
+    _slideTabBar.frame = CGRectMake(0, 88, ScreenWidth, 55);
+    _slideTabBar.delegate = self;
+    [self.view addSubview:_slideTabBar];
+    [_slideTabBar setImageNames:@[@"Home", @"Trending", @"Subscriptions", @"Account"] tabIndex:0];
+}
+
+// slidetabBar delegate
+- (void)slideTabBar:(NSInteger)tabIndex WithTitle:(NSString *)title {
+    //[_leftLabelBtn setTitle:title];
 }
 
 /*

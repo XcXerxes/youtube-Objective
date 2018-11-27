@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SlideViewController.h"
 #import "MainViewController.h"
+#import "TabBarController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [MainViewController new]];
+    _window.rootViewController = [TabBarController new];
     [_window makeKeyAndVisible];
     return YES;
 }
