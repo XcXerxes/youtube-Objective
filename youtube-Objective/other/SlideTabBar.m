@@ -45,21 +45,18 @@
     }
     // 一次性删除所有的子视图
     [[self subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"11");
         [obj removeFromSuperview];
     }];
     // 清空数组
     [_btns removeAllObjects];
-    NSLog(@"222");
     CGFloat itemWidth = _itemWidth = ScreenWidth/_imageNames.count;
-    NSLog(@"====itemWidth-=====%lf", itemWidth);
     __weak typeof(self) wself = self;
     
     [_imageNames enumerateObjectsUsingBlock:^(__kindof NSString * _Nonnull imageName, NSUInteger idx, BOOL * _Nonnull stop) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIImage *image = [UIImage imageNamed:imageName];
+        UIImage *image = [wself setSlideImage:imageName];
         [btn setImage:image forState:UIControlStateNormal];
-        btn.frame = CGRectMake(idx*itemWidth, 0, itemWidth, wself.bounds.size.height);
+        btn.frame = CGRectMake(idx*itemWidth, self.bounds.origin.y, itemWidth, wself.bounds.size.height);
         btn.tag = idx;
         // UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         // imageView.frame = CGRectMake(idx*itemWidth, 0, itemWidth, wself.bounds.size.height);
@@ -71,7 +68,7 @@
         [wself addSubview:btn];
     }];
     // 设置选中时图片的样式
-    UIImage *selectedImage = [UIImage imageNamed: [NSString stringWithFormat:@"%@Selected", _imageNames[_tableIndex]]];
+    UIImage *selectedImage = [self setSlideSelectedImage:_imageNames[_tableIndex]];
     [_btns[_tableIndex] setImage:selectedImage forState:UIControlStateNormal];
     // 定义下划线的样式
     _slideLineView = [UIView new];
@@ -90,31 +87,45 @@
     _tableIndex = tabIndex;
 }
 
+// 返回图片的容器
+- (UIImage *)setSlideImage:(NSString *)imageName {
+    UIImage *image = [UIImage imageNamed: [imageName lowercaseString]];
+    return image;
+}
+
+// 返回被选中的图片
+- (UIImage *)setSlideSelectedImage:(NSString *)imageName {
+    UIImage *selectedImage = [UIImage imageNamed: [NSString stringWithFormat:@"%@Selected", [imageName lowercaseString]]];
+    return selectedImage;
+}
+
 -(void)onTapAction:(UIButton *)btn {
     NSInteger index = btn.tag;
     __weak typeof(self) wself = self;
-    // 切换时的动画实现
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        // 获取下划线的位置
-        CGRect frame = wself.slideLineView.frame;
-        // 将新的位置赋值给 y 坐标
-        frame.origin.x = wself.itemWidth * index + 15;
-        // 设置新的位置坐标
-        [wself.slideLineView setFrame:frame];
-        
-        // 设置选中时的图片
-        [wself.btns enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIImage *image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", wself.imageNames[idx]]];
-            if (idx == index) {
-                UIImage *selectedImage = [UIImage imageNamed: [NSString stringWithFormat:@"%@Selected", wself.imageNames[idx]]];
-                [obj setImage:selectedImage forState:UIControlStateNormal];
-            } else {
-                [obj setImage:image forState:UIControlStateNormal];
-            }
+    if (self.delegate) {
+        // 切换时的动画实现
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            // 获取下划线的位置
+            CGRect frame = wself.slideLineView.frame;
+            // 将新的位置赋值给 y 坐标
+            frame.origin.x = wself.itemWidth * index + 15;
+            // 设置新的位置坐标
+            [wself.slideLineView setFrame:frame];
+            
+            // 设置选中时的图片
+            [wself.btns enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                UIImage *image = [wself setSlideImage:wself.imageNames[idx]];
+                if (idx == index) {
+                    UIImage *selectedImage = [wself setSlideSelectedImage:wself.imageNames[index]];
+                    [obj setImage:selectedImage forState:UIControlStateNormal];
+                } else {
+                    [obj setImage:image forState:UIControlStateNormal];
+                }
+            }];
+        } completion:^(BOOL finished) {
+            [wself.delegate slideTabBar:index WithTitle:wself.imageNames[index]];
         }];
-    } completion:^(BOOL finished) {
-        
-    }];
+    }
 }
 
 @end

@@ -17,6 +17,10 @@
 		CF2D9B2221ABE2880048D523 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B2121ABE2880048D523 /* main.m */; };
 		CF2D9B2C21ABE66E0048D523 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B2B21ABE66E0048D523 /* SlideViewController.m */; };
 		CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */; };
+		CF2D9B3521AD20A50048D523 /* HoverViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B3421AD20A50048D523 /* HoverViewFlowLayout.m */; };
+		CF2D9B3B21AD38EF0048D523 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B3A21AD38EF0048D523 /* MainViewController.m */; };
+		CF2D9B4421AD40CA0048D523 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B4321AD40CA0048D523 /* HomeViewController.m */; };
+		CF2D9B4721AD42060048D523 /* BasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B4621AD42060048D523 /* BasePageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,14 @@
 		CF2D9B2D21ABE9D80048D523 /* SlideTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideTabBar.h; sourceTree = "<group>"; };
 		CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideTabBar.m; sourceTree = "<group>"; };
 		CF2D9B3121ABF43E0048D523 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CF2D9B3321AD20A50048D523 /* HoverViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverViewFlowLayout.h; sourceTree = "<group>"; };
+		CF2D9B3421AD20A50048D523 /* HoverViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverViewFlowLayout.m; sourceTree = "<group>"; };
+		CF2D9B3921AD38EF0048D523 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CF2D9B3A21AD38EF0048D523 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CF2D9B4221AD40CA0048D523 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		CF2D9B4321AD40CA0048D523 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		CF2D9B4521AD42060048D523 /* BasePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasePageViewController.h; sourceTree = "<group>"; };
+		CF2D9B4621AD42060048D523 /* BasePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasePageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +105,7 @@
 		CF2D9B2821ABE2C40048D523 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D9B3221AD19B00048D523 /* Main - 主页 */,
 				CF2D9B2921ABE3720048D523 /* other */,
 			);
 			name = modules;
@@ -107,6 +120,12 @@
 				CF2D9B2E21ABE9D80048D523 /* SlideTabBar.m */,
 				0D3522AD21AC2C0F0077B579 /* NavHeaderView.h */,
 				0D3522AE21AC2C100077B579 /* NavHeaderView.m */,
+				CF2D9B3321AD20A50048D523 /* HoverViewFlowLayout.h */,
+				CF2D9B3421AD20A50048D523 /* HoverViewFlowLayout.m */,
+				CF2D9B3921AD38EF0048D523 /* MainViewController.h */,
+				CF2D9B3A21AD38EF0048D523 /* MainViewController.m */,
+				CF2D9B4521AD42060048D523 /* BasePageViewController.h */,
+				CF2D9B4621AD42060048D523 /* BasePageViewController.m */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -117,6 +136,15 @@
 				CF2D9B3121ABF43E0048D523 /* Constants.h */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		CF2D9B3221AD19B00048D523 /* Main - 主页 */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D9B4221AD40CA0048D523 /* HomeViewController.h */,
+				CF2D9B4321AD40CA0048D523 /* HomeViewController.m */,
+			);
+			name = "Main - 主页";
 			sourceTree = "<group>";
 		};
 		D3284D2371D48BEBDE510809 /* Frameworks */ = {
@@ -234,10 +262,14 @@
 			files = (
 				CF2D9B2C21ABE66E0048D523 /* SlideViewController.m in Sources */,
 				0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */,
+				CF2D9B4721AD42060048D523 /* BasePageViewController.m in Sources */,
+				CF2D9B4421AD40CA0048D523 /* HomeViewController.m in Sources */,
 				CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */,
+				CF2D9B3B21AD38EF0048D523 /* MainViewController.m in Sources */,
 				CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */,
 				CF2D9B2221ABE2880048D523 /* main.m in Sources */,
 				CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */,
+				CF2D9B3521AD20A50048D523 /* HoverViewFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

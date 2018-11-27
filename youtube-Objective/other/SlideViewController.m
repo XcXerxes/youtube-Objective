@@ -8,13 +8,17 @@
 
 #import "SlideViewController.h"
 #import "Constants.h"
+#import "NavHeaderView.h"
+#import "HoverViewFlowLayout.h"
 
 @interface SlideViewController ()
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout,
-UIScrollViewDelegate
+UIScrollViewDelegate,
+SlideTabBarDelegate
 >
+@property (nonatomic, strong) UIBarButtonItem *leftLabelBtn;
 @end
 
 @implementation SlideViewController
@@ -25,9 +29,17 @@ UIScrollViewDelegate
     // 设置导航的背景
     [self initNav];
     // 初始化slide
-    [self initSlideTabBar];
+    // [self initSlideTabBar];
     // 初始化collectionView
     [self initCollectionView];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.collectionView.delegate = self;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.collectionView.delegate = nil;
 }
 
 // initNav
@@ -35,10 +47,18 @@ UIScrollViewDelegate
     self.navigationController.navigationBar.translucent = NO;
     // 设置导航控制器的背景颜色
     self.navigationController.navigationBar.barTintColor = ColorThemeRed;
+    //
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [self setStatusBarBackgroundColor: ColorThemeRed];
     // 去掉导航控制器的下边框
     self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+    //左边标题按钮
+    _leftLabelBtn = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStyleDone target:self action:nil];
+    [_leftLabelBtn setTintColor:ColorWhite];
+    _leftLabelBtn.enabled = NO;
+    [_leftLabelBtn setTitleTextAttributes:@{NSForegroundColorAttributeName: ColorWhite} forState:UIControlStateDisabled];
+    self.navigationItem.leftBarButtonItem = _leftLabelBtn;
 }
 - (void)setStatusBarBackgroundColor:(UIColor *)color {
     
@@ -49,12 +69,22 @@ UIScrollViewDelegate
 }
 
 -(void) initCollectionView {
-    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+    HoverViewFlowLayout *layout = [[HoverViewFlowLayout alloc] initWithTopHeight:55.0];;
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 0;
-    _collectionView = [[UICollectionView alloc] initWithFrame: CGRectMake(0, self.slideTabBar.frame.size.height, ScreenWidth, self.view.bounds.size.height - self.slideTabBar.frame.size.height) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame: CGRectMake(0, 0, ScreenWidth, self.view.bounds.size.height) collectionViewLayout:layout];
+    _collectionView.alwaysBounceVertical = NO;
+    // 适配 ios11 出现UI bug
+    if (@available(iOS 11.0, *)) {
+        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     _collectionView.delegate = self;
-    _collectionView.dataSource = self;   
+    _collectionView.dataSource = self;
+    // 点击状态栏会触发滚动视图， 隐藏到slideTabBar 的事件
+    _collectionView.scrollsToTop = NO;
+    [_collectionView registerClass:[NavHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headId"];
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
      [self.view addSubview:_collectionView];
 }
@@ -62,8 +92,9 @@ UIScrollViewDelegate
 -(void) initSlideTabBar {
     _slideTabBar = [SlideTabBar new];
     _slideTabBar.frame = CGRectMake(0, 0, ScreenWidth, 55);
+    _slideTabBar.delegate = self;
     [self.view addSubview:_slideTabBar];
-    [_slideTabBar setImageNames:@[@"home", @"trending", @"subscriptions", @"account"] tabIndex:0];
+    [_slideTabBar setImageNames:@[@"Home", @"Trending", @"Subscriptions", @"Account"] tabIndex:0];
 }
 
 /*
@@ -76,11 +107,11 @@ UIScrollViewDelegate
 }
 */
 // 返回 collection 头部
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//    NavHeaderView *reusbaleView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headId" forIndexPath:indexPath];
-//
-//    return reusbaleView;
-//}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    NavHeaderView *reusbaleView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headId" forIndexPath:indexPath];
+    reusbaleView.slideTabBar.delegate = self;
+    return reusbaleView;
+}
 // 组数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -99,34 +130,37 @@ UIScrollViewDelegate
     return CGSizeMake(ScreenWidth, 200);
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 // 设置头部的高度
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-//    return CGSizeMake(ScreenWidth, 55);
-//}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(ScreenWidth, 55);
+}
 
 // 滚动时的delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > 0) {
+    if (offsetY > 15) {
         [UIView animateWithDuration:.2 animations:^{
-            [self.collectionView setFrame:CGRectMake(0, 40.0+55.0, ScreenWidth, ScreenHeight - 55.0-40.0)];
-            [self.slideTabBar setFrame:CGRectMake(0, 40, ScreenWidth, 55)];
-            
-            //self.view.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight);
+            [self.collectionView setFrame:CGRectMake(0, 40, ScreenWidth, ScreenHeight)];
+          // [self.slideTabBar setFrame:CGRectMake(0, 15, ScreenWidth, 55)];
+            [self.navigationController setNavigationBarHidden:YES];
         } completion:^(BOOL finished) {
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-            [self.navigationController setHidesBarsOnTap:YES];
-            
         }];
-    } else {
+    } else if (offsetY < 15) {
         [UIView animateWithDuration:.2 animations:^{
-            [self.slideTabBar setFrame:CGRectMake(0, 0, ScreenWidth, 55)];
-            [self.collectionView setFrame:CGRectMake(0, 55.0, ScreenWidth, ScreenHeight - 55.0)];
+            [self.collectionView setFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+            [self.navigationController setNavigationBarHidden:NO];
         } completion:^(BOOL finished) {
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
-            
         }];
     }
+}
+
+// slidetabBar delegate
+- (void)slideTabBar:(NSInteger)tabIndex WithTitle:(NSString *)title {
+    [_leftLabelBtn setTitle:title];
 }
 
 @end

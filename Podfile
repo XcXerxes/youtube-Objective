@@ -7,4 +7,5 @@ target 'youtube-Objective' do
 
   # Pods for youtube-Objective
   pod 'AFNetworking'
+  pod 'Masonry'
 end

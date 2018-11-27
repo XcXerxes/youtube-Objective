@@ -21,7 +21,8 @@
     _slideTabBar = [SlideTabBar new];
     [self addSubview: _slideTabBar];
     NSLog(@"=====%@lf", self.bounds.size.width);
-    _slideTabBar.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, 55);
-    [_slideTabBar setImageNames:@[@"home", @"trending", @"subscriptions", @"account"] tabIndex:0];
+    _slideTabBar.frame = self.bounds;
+    [_slideTabBar setImageNames:@[@"Home", @"Trending", @"Subscriptions", @"Account"] tabIndex:0];
 }
+
 @end

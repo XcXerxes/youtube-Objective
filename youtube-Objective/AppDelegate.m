@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SlideViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [SlideViewController new]];
+    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController: [MainViewController new]];
     [_window makeKeyAndVisible];
     return YES;
 }
