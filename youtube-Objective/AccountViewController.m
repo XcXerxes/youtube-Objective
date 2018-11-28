@@ -8,6 +8,7 @@
 
 #import "AccountViewController.h"
 #import "AccountCollectionViewCell.h"
+#import "AccountHeader.h"
 #import "Constants.h"
 
 @interface AccountViewController ()
@@ -37,14 +38,24 @@ UICollectionViewDelegateFlowLayout
     _collectionView = [[UICollectionView alloc] initWithFrame:ScreenBounds collectionViewLayout:layout];
     _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [_collectionView registerClass:[AccountCollectionViewCell class] forCellWithReuseIdentifier:@"cellId"];
+    [_collectionView registerClass:[AccountHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerId"];
     _collectionView.backgroundColor = ColorWhite;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     [self.view addSubview:_collectionView];
 }
+// 头部自定义控件
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    AccountHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerId" forIndexPath:indexPath];
+    return header;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(ScreenWidth, 124);
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 8;
+    return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

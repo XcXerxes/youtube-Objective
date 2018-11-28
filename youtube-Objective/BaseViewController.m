@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "Constants.h"
+#import "SettingView.h"
 
 @interface BaseViewController ()
 @property (nonatomic, strong) UIBarButtonItem *leftLabelBtn;
@@ -46,7 +47,7 @@
     self.navigationItem.leftBarButtonItem = _leftLabelBtn;
     
     // 设置右边的按钮组
-    NSArray *images = @[@"navSearch", @"navSettings"];
+    NSArray *images = @[@"navSettings", @"navSearch"];
     __weak typeof(self) wself = self;
     _rightBtns = [NSMutableArray array];
     [images enumerateObjectsUsingBlock:^(NSString *imageName, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -64,7 +65,12 @@
 
 // 导航控制器 按钮被点击
 -(void) pressRightBtn:(UIBarButtonItem *)barBtn {
-    
+    NSInteger tag = barBtn.tag;
+    if (tag == 100) {
+        NSLog(@"setting");
+        SettingView *settingView = [SettingView new];
+        [settingView setHidden:NO];
+    }
 }
 /*
 #pragma mark - Navigation
