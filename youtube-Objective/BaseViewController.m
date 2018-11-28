@@ -13,6 +13,7 @@
 @interface BaseViewController ()
 @property (nonatomic, strong) UIBarButtonItem *leftLabelBtn;
 @property (nonatomic, copy) NSMutableArray<UIBarButtonItem *> *rightBtns;
+@property (nonatomic, strong) SettingView *settingView;
 @end
 
 @implementation BaseViewController
@@ -57,6 +58,8 @@
         [wself.rightBtns addObject:btn];
     }];
     self.navigationItem.rightBarButtonItems = _rightBtns;
+    _settingView = [[SettingView alloc] initWithFrame: ScreenBounds];
+    [self.view addSubview:_settingView];
     
 }
 - (void)setLeftLabelTitle:(NSString *)title {
@@ -68,8 +71,16 @@
     NSInteger tag = barBtn.tag;
     if (tag == 100) {
         NSLog(@"setting");
-        SettingView *settingView = [SettingView new];
-        [settingView setHidden:NO];
+        __weak typeof(self) wself = self;
+        [_settingView setHidden:NO];
+        [UIView animateWithDuration:.4 animations:^{
+            wself.settingView.bgView.alpha = .5;
+            CGFloat offsetY = ScreenHeight - 288.0 - 120.0;
+            wself.settingView.tableView.frame = CGRectMake(wself.settingView.tableView.frame.origin.x, offsetY, ScreenWidth, 288);
+            [wself.settingView layoutIfNeeded ];
+        } completion:^(BOOL finished) {
+            
+        }];
     }
 }
 /*

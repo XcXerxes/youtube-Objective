@@ -60,6 +60,10 @@ UITableViewDataSource
     return 280;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"======selected");
+}
+
 /*
 #pragma mark - Navigation
 

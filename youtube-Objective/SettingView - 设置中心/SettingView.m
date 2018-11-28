@@ -12,7 +12,8 @@
 @interface SettingView ()
 <
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+UIGestureRecognizerDelegate
 >
 @end
 
@@ -23,22 +24,40 @@ UITableViewDataSource
     self = [super initWithFrame:frame];
     if (self) {
         [self initBgView];
+        [self initTableView];
     }
     return self;
 }
 
 -(void) initBgView {
-    NSLog(@"======");
-    _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+    _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     _bgView.backgroundColor = ColorBlack;
+    _bgView.alpha = 0;
     [self addSubview:_bgView];
+    _bgView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(TapSetting:)];
+    tap.numberOfTouchesRequired = 1;
+    [_bgView addGestureRecognizer:tap];
+    
+}
+-(void) TapSetting:(UITapGestureRecognizer *)tap {
+    [self hiddenSetting];
+}
+
+-(void)hiddenSetting {
+    __weak typeof(self) wself = self;
+    [UIView animateWithDuration:.4 animations:^{
+        wself.bgView.alpha = 0;
+        wself.tableView.frame = CGRectMake(0, ScreenHeight, ScreenWidth, 288);
+    }];
 }
 
 -(void) initTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 288, ScreenWidth, 288) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, ScreenHeight, ScreenWidth, 288) style:UITableViewStyleGrouped];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.backgroundColor = ColorWhite;
     [self addSubview:_tableView];
 }
 

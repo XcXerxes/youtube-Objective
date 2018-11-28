@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SettingView : UIView
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) UIView *bgView;
+@property (nonatomic, copy) NSLayoutConstraint *tableViewBottomConstraint;
 @end
 
 NS_ASSUME_NONNULL_END
