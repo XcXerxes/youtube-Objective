@@ -10,19 +10,23 @@
 #import "Constants.h"
 
 @interface BaseViewController ()
-
+@property (nonatomic, strong) UIBarButtonItem *leftLabelBtn;
+@property (nonatomic, copy) NSMutableArray<UIBarButtonItem *> *rightBtns;
 @end
 
 @implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setNavigationBarTransparent];
     [self setNavigationBarBackgroundColor: ColorThemeRed];
+    [self initNavigationBar];
+    [self setLeftLabelTitle:@"Home"];
 }
 // 设置背景不透明
 - (void)setNavigationBarTransparent {
@@ -32,6 +36,35 @@
 // 设置背景色
 -(void) setNavigationBarBackgroundColor:(UIColor *)color {
     self.navigationController.navigationBar.barTintColor = color;
+}
+-(void) initNavigationBar {
+    //左边标题按钮
+    _leftLabelBtn = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:self action:nil];
+    [_leftLabelBtn setTintColor:ColorWhite];
+    _leftLabelBtn.enabled = NO;
+    [_leftLabelBtn setTitleTextAttributes:@{NSForegroundColorAttributeName: ColorWhite} forState:UIControlStateDisabled];
+    self.navigationItem.leftBarButtonItem = _leftLabelBtn;
+    
+    // 设置右边的按钮组
+    NSArray *images = @[@"navSearch", @"navSettings"];
+    __weak typeof(self) wself = self;
+    _rightBtns = [NSMutableArray array];
+    [images enumerateObjectsUsingBlock:^(NSString *imageName, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imageName] style:UIBarButtonItemStyleDone target:wself action:@selector(pressRightBtn:)];
+        [btn setTintColor: ColorWhite];
+        btn.tag = 100 + idx;
+        [wself.rightBtns addObject:btn];
+    }];
+    self.navigationItem.rightBarButtonItems = _rightBtns;
+    
+}
+- (void)setLeftLabelTitle:(NSString *)title {
+    [_leftLabelBtn setTitle:title];
+}
+
+// 导航控制器 按钮被点击
+-(void) pressRightBtn:(UIBarButtonItem *)barBtn {
+    
 }
 /*
 #pragma mark - Navigation

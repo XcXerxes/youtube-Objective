@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AccountViewController : BaseViewController
-
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 NS_ASSUME_NONNULL_END
