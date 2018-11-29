@@ -15,20 +15,25 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Masonry (1.1.0)
+  - WMPlayer (5.0.0):
+    - Masonry
 
 DEPENDENCIES:
   - AFNetworking
   - Masonry
+  - WMPlayer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Masonry
+    - WMPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  WMPlayer: a914f80ed5dca7cd9e3a94ec07a2b02eec8c15c0
 
-PODFILE CHECKSUM: 48eed81aa3b0c4c9fd7cf241433520dda0c19802
+PODFILE CHECKSUM: 0b334612130cfddf4b7c83646b9d9faf0062abeb
 
 COCOAPODS: 1.5.3

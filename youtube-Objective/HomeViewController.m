@@ -10,6 +10,7 @@
 #import "HomeTableViewCell.h"
 #import "Constants.h"
 #import "Video.h"
+#import "PlayViewController.h"
 
 @interface HomeViewController ()
 <
@@ -52,6 +53,7 @@ UITableViewDataSource
     if (cell == nil) {
         cell = [[HomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellId"];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell initData:[Video new]];
     return cell;
 }
@@ -62,6 +64,8 @@ UITableViewDataSource
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"======selected");
+    PlayViewController *playView = [PlayViewController new];
+    [self.navigationController pushViewController:playView animated:YES];
 }
 
 /*

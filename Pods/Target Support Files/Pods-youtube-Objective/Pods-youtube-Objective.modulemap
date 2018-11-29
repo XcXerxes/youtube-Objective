@@ -1,0 +1,6 @@
+module Pods_youtube_Objective {
+  umbrella header "Pods-youtube-Objective-umbrella.h"
+
+  export *
+  module * { export * }
+}

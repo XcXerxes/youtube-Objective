@@ -33,6 +33,10 @@
 		CF2D9B5421AEA1080048D523 /* AccountHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B5321AEA1080048D523 /* AccountHeader.m */; };
 		CF2D9B5821AEA7A00048D523 /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B5721AEA7A00048D523 /* SettingView.m */; };
 		CF2D9B5E21AEAED50048D523 /* TestBiew.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B5D21AEAED50048D523 /* TestBiew.m */; };
+		CF2D9B6221AF85150048D523 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B6121AF85150048D523 /* PlayViewController.m */; };
+		CF2D9B6521AF92530048D523 /* PlayViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B6421AF92530048D523 /* PlayViewCell.m */; };
+		CF2D9B6821AF98ED0048D523 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B6721AF98ED0048D523 /* PlayerView.m */; };
+		CF2D9B6E21AFC85A0048D523 /* PlayViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B6D21AFC85A0048D523 /* PlayViewHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +92,14 @@
 		CF2D9B5721AEA7A00048D523 /* SettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
 		CF2D9B5C21AEAED50048D523 /* TestBiew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBiew.h; sourceTree = "<group>"; };
 		CF2D9B5D21AEAED50048D523 /* TestBiew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBiew.m; sourceTree = "<group>"; };
+		CF2D9B6021AF85150048D523 /* PlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		CF2D9B6121AF85150048D523 /* PlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		CF2D9B6321AF92530048D523 /* PlayViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewCell.h; sourceTree = "<group>"; };
+		CF2D9B6421AF92530048D523 /* PlayViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayViewCell.m; sourceTree = "<group>"; };
+		CF2D9B6621AF98ED0048D523 /* PlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
+		CF2D9B6721AF98ED0048D523 /* PlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
+		CF2D9B6C21AFC85A0048D523 /* PlayViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewHeader.h; sourceTree = "<group>"; };
+		CF2D9B6D21AFC85A0048D523 /* PlayViewHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayViewHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +185,7 @@
 		CF2D9B2821ABE2C40048D523 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF2D9B5F21AF845C0048D523 /* PlayView - 视频播放页面 */,
 				CF2D9B5521AEA77B0048D523 /* SettingView - 设置中心 */,
 				0D3522B821AD79860077B579 /* Account - 个人中心 */,
 				0D3522B721AD79410077B579 /* Subscriptions - 订阅 */,
@@ -247,6 +260,21 @@
 			path = "SettingView - 设置中心";
 			sourceTree = "<group>";
 		};
+		CF2D9B5F21AF845C0048D523 /* PlayView - 视频播放页面 */ = {
+			isa = PBXGroup;
+			children = (
+				CF2D9B6021AF85150048D523 /* PlayViewController.h */,
+				CF2D9B6121AF85150048D523 /* PlayViewController.m */,
+				CF2D9B6321AF92530048D523 /* PlayViewCell.h */,
+				CF2D9B6421AF92530048D523 /* PlayViewCell.m */,
+				CF2D9B6621AF98ED0048D523 /* PlayerView.h */,
+				CF2D9B6721AF98ED0048D523 /* PlayerView.m */,
+				CF2D9B6C21AFC85A0048D523 /* PlayViewHeader.h */,
+				CF2D9B6D21AFC85A0048D523 /* PlayViewHeader.m */,
+			);
+			name = "PlayView - 视频播放页面";
+			sourceTree = "<group>";
+		};
 		D3284D2371D48BEBDE510809 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +303,7 @@
 				CF2D9B0B21ABE2810048D523 /* Sources */,
 				CF2D9B0C21ABE2810048D523 /* Frameworks */,
 				CF2D9B0D21ABE2810048D523 /* Resources */,
+				458D95AFB803FF331E62B6D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,6 +360,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		458D95AFB803FF331E62B6D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective-resources.sh",
+				"${PODS_ROOT}/WMPlayer/WMPlayer/WMPlayer.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WMPlayer.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		50CE2CC063046CDEAC3B1728 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,10 +413,13 @@
 			files = (
 				CF2D9B2C21ABE66E0048D523 /* SlideViewController.m in Sources */,
 				0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */,
+				CF2D9B6521AF92530048D523 /* PlayViewCell.m in Sources */,
 				CF2D9B5821AEA7A00048D523 /* SettingView.m in Sources */,
+				CF2D9B6821AF98ED0048D523 /* PlayerView.m in Sources */,
 				CF2D9B4B21AE2E3D0048D523 /* Video.m in Sources */,
 				CF2D9B4721AD42060048D523 /* BasePageViewController.m in Sources */,
 				CF2D9B4421AD40CA0048D523 /* HomeViewController.m in Sources */,
+				CF2D9B6221AF85150048D523 /* PlayViewController.m in Sources */,
 				0D3522C121AD79E60077B579 /* AccountViewController.m in Sources */,
 				CF2D9B2F21ABE9D80048D523 /* SlideTabBar.m in Sources */,
 				0D3522BE21AD79DC0077B579 /* SubscriptionsViewController.m in Sources */,
@@ -374,6 +428,7 @@
 				CF2D9B3B21AD38EF0048D523 /* MainViewController.m in Sources */,
 				0D3522C421AD7B440077B579 /* BaseViewController.m in Sources */,
 				0D3522BB21AD79A10077B579 /* TrendingViewController.m in Sources */,
+				CF2D9B6E21AFC85A0048D523 /* PlayViewHeader.m in Sources */,
 				CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */,
 				CF2D9B2221ABE2880048D523 /* main.m in Sources */,
 				CF2D9B4E21AE3CC20048D523 /* HomeTableViewCell.m in Sources */,
@@ -523,9 +578,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "youtube-Objective/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,9 +597,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "youtube-Objective/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
