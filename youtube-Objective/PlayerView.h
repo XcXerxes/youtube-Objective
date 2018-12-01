@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WMPlayer.h"
 NS_ASSUME_NONNULL_BEGIN
-
+@class WMPlayer;
 @interface PlayerView : UIView
-
+@property WMPlayer *wmPlayer;
 @end
 
 NS_ASSUME_NONNULL_END

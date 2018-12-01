@@ -7,8 +7,11 @@
 //
 
 #import "PlayerView.h"
-#import "WMPlayer.h"
 #import "Masonry.h"
+
+@interface PlayerView()
+
+@end
 
 @implementation PlayerView
 
@@ -33,17 +36,17 @@
 -(void)initPresentMovie {
     WMPlayerModel *playerModel = [WMPlayerModel new];
     playerModel.videoURL = [NSURL URLWithString:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
-    WMPlayer *wmPlayer = [[WMPlayer alloc] initPlayerModel:playerModel];
-    [self addSubview:wmPlayer];
-    [wmPlayer mas_makeConstraints:^(MASConstraintMaker *make) {
+    _wmPlayer = [[WMPlayer alloc] initPlayerModel:playerModel];
+        [_wmPlayer setBackBtnStyle:BackBtnStylePop];
+    [self addSubview:_wmPlayer];
+    [_wmPlayer mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.top.equalTo(self);
-        make.height.mas_equalTo(wmPlayer.mas_width).multipliedBy(9.0/16);
+        make.height.mas_equalTo(self.wmPlayer.mas_width).multipliedBy(9.0/16);
     }];
-    [wmPlayer play];
+    [_wmPlayer play];
 }
 
 -(void) play {
     
 }
-
 @end

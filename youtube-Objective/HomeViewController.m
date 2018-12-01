@@ -65,7 +65,13 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"======selected");
     PlayViewController *playView = [PlayViewController new];
-    [self.navigationController pushViewController:playView animated:YES];
+    CATransition *amin = [CATransition animation];
+    amin.duration = .4;
+    amin.type = @"cameraIrisHollowOpen";
+    amin.subtype = kCATransitionFromTop;
+    amin.timingFunction = UIViewAnimationOptionCurveEaseInOut;
+    [self.navigationController.view.layer addAnimation:amin forKey:nil];
+    [self.navigationController pushViewController:playView animated:NO];
 }
 
 /*

@@ -18,7 +18,8 @@
 <
 UICollectionViewDelegate,
 UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout
+UICollectionViewDelegateFlowLayout,
+WMPlayerDelegate
 >
 @end
 
@@ -32,11 +33,18 @@ UICollectionViewDelegateFlowLayout
     
 }
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar setHidden:YES];
+    self.navigationController.navigationBarHidden = YES;
+    [UIApplication sharedApplication].statusBarHidden = YES;
     [super viewWillAppear: animated];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    [super viewWillDisappear: animated];
 }
 -(void) initPlayerView {
     PlayerView *playView = [[PlayerView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 211.0)];
+    playView.wmPlayer.delegate = self;
     [self.view addSubview:playView];
 }
 -(void) initCollectionView {
@@ -68,12 +76,17 @@ UICollectionViewDelegateFlowLayout
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PlayViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
-    cell.backgroundColor = indexPath.row %2 == 0 ? ColorThemeRed : ColorThemeGray;
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(ScreenWidth, 120);
+    return CGSizeMake(ScreenWidth, 106);
+}
+
+// wmPlayer delegate
+- (void)wmplayer:(WMPlayer *)wmplayer clickedCloseButton:(UIButton *)backBtn {
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 /*
 #pragma mark - Navigation

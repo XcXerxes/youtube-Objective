@@ -50,8 +50,8 @@
     [_likeBtn setImage:[UIImage imageNamed:@"thumbUp"] forState:UIControlStateNormal];
     [_likeBtn setTitle:@"746" forState:UIControlStateNormal];
     [_likeBtn setTitleColor:ColorThemeGray forState:UIControlStateNormal];
-    [_likeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 8/2, 0, -8/2)];
-    [_likeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -8/2, 0, 8/2)];
+    [_likeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 8/2, 0, 0)];
+    [_likeBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -30/2, 0, 8/2)];
     [_containerView addSubview:_likeBtn];
     [_likeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(wself.showLabel.mas_bottom).offset(10);
@@ -63,7 +63,7 @@
     [_dislikeBtn setImage:[UIImage imageNamed:@"thumbDown"] forState:UIControlStateNormal];
     [_dislikeBtn setTitle:@"120" forState:UIControlStateNormal];
     [_dislikeBtn setTitleColor:ColorThemeGray forState:UIControlStateNormal];
-    [_dislikeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 8/2, 0, -8/2)];
+    [_dislikeBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 8/2, 0, 0)];
     [_dislikeBtn setImageEdgeInsets:UIEdgeInsetsMake(2, -8/2, 0, 8/2)];
     [_containerView addSubview:_dislikeBtn];
     [_dislikeBtn mas_makeConstraints:^(MASConstraintMaker *make) {

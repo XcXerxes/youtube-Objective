@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "Constants.h"
 #import "SettingView.h"
+#import "SearchViewController.h"
 
 @interface BaseViewController ()
 @property (nonatomic, strong) UIBarButtonItem *leftLabelBtn;
@@ -27,6 +28,7 @@
     [super viewWillAppear:animated];
     [self setNavigationBarTransparent];
     [self setNavigationBarBackgroundColor: ColorThemeRed];
+    [self setStatusBarBackgroundColor:ColorThemeRed];
     [self initNavigationBar];
     [self setLeftLabelTitle:@"Home"];
 }
@@ -37,7 +39,7 @@
 
 // 设置背景色
 -(void) setNavigationBarBackgroundColor:(UIColor *)color {
-    self.navigationController.navigationBar.barTintColor = color;
+    [self.navigationController.navigationBar setBarTintColor: color];
 }
 -(void) initNavigationBar {
     //左边标题按钮
@@ -81,6 +83,14 @@
         } completion:^(BOOL finished) {
             
         }];
+    } else {
+        [self.navigationController pushViewController:[SearchViewController new] animated:YES];
+    }
+}
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
     }
 }
 /*

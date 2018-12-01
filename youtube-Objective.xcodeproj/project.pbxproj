@@ -14,6 +14,8 @@
 		0D3522BE21AD79DC0077B579 /* SubscriptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522BD21AD79DC0077B579 /* SubscriptionsViewController.m */; };
 		0D3522C121AD79E60077B579 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522C021AD79E60077B579 /* AccountViewController.m */; };
 		0D3522C421AD7B440077B579 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522C321AD7B440077B579 /* BaseViewController.m */; };
+		0D3522C821B1167E0077B579 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522C721B1167E0077B579 /* SearchViewController.m */; };
+		0D3522CB21B2A1830077B579 /* SubscriptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3522CA21B2A1830077B579 /* SubscriptionsCell.m */; };
 		8CF0422B68B60BA2973888EA /* libPods-youtube-Objective.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */; };
 		CF2D9B1421ABE2810048D523 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1321ABE2810048D523 /* AppDelegate.m */; };
 		CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2D9B1621ABE2810048D523 /* ViewController.m */; };
@@ -54,6 +56,10 @@
 		0D3522C021AD79E60077B579 /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		0D3522C221AD7B440077B579 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0D3522C321AD7B440077B579 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0D3522C621B1167E0077B579 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		0D3522C721B1167E0077B579 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		0D3522C921B2A1830077B579 /* SubscriptionsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscriptionsCell.h; sourceTree = "<group>"; };
+		0D3522CA21B2A1830077B579 /* SubscriptionsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubscriptionsCell.m; sourceTree = "<group>"; };
 		3E17BB6566BBB97EF3BA45F1 /* libPods-youtube-Objective.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-youtube-Objective.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4C8F661C5E1439FB598A6E /* Pods-youtube-Objective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.release.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.release.xcconfig"; sourceTree = "<group>"; };
 		BBEA738E001ED9703CE16965 /* Pods-youtube-Objective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube-Objective.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youtube-Objective/Pods-youtube-Objective.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +134,8 @@
 			children = (
 				0D3522BC21AD79DC0077B579 /* SubscriptionsViewController.h */,
 				0D3522BD21AD79DC0077B579 /* SubscriptionsViewController.m */,
+				0D3522C921B2A1830077B579 /* SubscriptionsCell.h */,
+				0D3522CA21B2A1830077B579 /* SubscriptionsCell.m */,
 			);
 			path = "Subscriptions - 订阅";
 			sourceTree = "<group>";
@@ -143,6 +151,15 @@
 				CF2D9B5321AEA1080048D523 /* AccountHeader.m */,
 			);
 			name = "Account - 个人中心";
+			sourceTree = "<group>";
+		};
+		0D3522C521B1149F0077B579 /* SearchViewController - 搜索页面 */ = {
+			isa = PBXGroup;
+			children = (
+				0D3522C621B1167E0077B579 /* SearchViewController.h */,
+				0D3522C721B1167E0077B579 /* SearchViewController.m */,
+			);
+			path = "SearchViewController - 搜索页面";
 			sourceTree = "<group>";
 		};
 		CF2D9B0621ABE2800048D523 = {
@@ -185,6 +202,7 @@
 		CF2D9B2821ABE2C40048D523 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				0D3522C521B1149F0077B579 /* SearchViewController - 搜索页面 */,
 				CF2D9B5F21AF845C0048D523 /* PlayView - 视频播放页面 */,
 				CF2D9B5521AEA77B0048D523 /* SettingView - 设置中心 */,
 				0D3522B821AD79860077B579 /* Account - 个人中心 */,
@@ -415,6 +433,7 @@
 				0D3522AF21AC2C100077B579 /* NavHeaderView.m in Sources */,
 				CF2D9B6521AF92530048D523 /* PlayViewCell.m in Sources */,
 				CF2D9B5821AEA7A00048D523 /* SettingView.m in Sources */,
+				0D3522C821B1167E0077B579 /* SearchViewController.m in Sources */,
 				CF2D9B6821AF98ED0048D523 /* PlayerView.m in Sources */,
 				CF2D9B4B21AE2E3D0048D523 /* Video.m in Sources */,
 				CF2D9B4721AD42060048D523 /* BasePageViewController.m in Sources */,
@@ -428,6 +447,7 @@
 				CF2D9B3B21AD38EF0048D523 /* MainViewController.m in Sources */,
 				0D3522C421AD7B440077B579 /* BaseViewController.m in Sources */,
 				0D3522BB21AD79A10077B579 /* TrendingViewController.m in Sources */,
+				0D3522CB21B2A1830077B579 /* SubscriptionsCell.m in Sources */,
 				CF2D9B6E21AFC85A0048D523 /* PlayViewHeader.m in Sources */,
 				CF2D9B1721ABE2810048D523 /* ViewController.m in Sources */,
 				CF2D9B2221ABE2880048D523 /* main.m in Sources */,
@@ -582,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "youtube-Objective/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,7 +621,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "youtube-Objective/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

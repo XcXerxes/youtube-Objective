@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 设置标题的文字
 -(void) setLeftLabelTitle: (NSString *)title;
+
+//状态栏
+-(void) setStatusBarBackgroundColor: (UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_END
